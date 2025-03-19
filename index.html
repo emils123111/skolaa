@@ -1,8 +1,37 @@
 <!DOCTYPE html>
 <html>
   <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <style>
-      h1,
+      .navbar {
+        padding: 0 !important;
+        border-radius: 0 !important;
+        background-color: black !important;
+        margin-left: 0 !important;
+      }
+      .content-container {
+        max-width: 800px; /* Adjust width as needed */
+        margin: 150px auto; /* Centers content */
+        background-color: white;
+        padding: 20px;
+        border-radius: 5px;
+      }
+
+      .w3-top {
+        width: 100vw !important; /* Full width navbar */
+        left: 0;
+        right: 0;
+        margin: 0 !important;
+      }
+
       h2,
       img,
       div {
@@ -22,80 +51,186 @@
         height: auto;
         display: block;
       }
-
-      div,
-      p {
-        max-width: 100%;
-        overflow: hidden;
-      }
     </style>
     <title>Mans datorikas portfolio</title>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var offset = 60;
+
+        var links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            var targetId = this.getAttribute("href");
+            var targetElement = document.querySelector(targetId);
+
+            window.scrollTo({
+              top: targetElement.offsetTop - offset,
+              behavior: "smooth",
+            });
+          });
+        });
+      });
+    </script>
   </head>
-  <body
-    style="margin-left: 600px; margin-right: 600px; background-color: lightblue"
-  >
-    <h1 style="text-align: center; background-color: whitesmoke">
-      Mans datorikas portfolio
-    </h1>
-    <p class="">
-      Šajā portfolio pastāstīšu un parādīšu, ko mācījos 2024./2025. mācību gadā
-      datorikā pie skolotājas Aijas Lūses. Šī gada pirmā stunda notika sestajā
-      septembrī un kopš tās mēs paspējām apgūt vairākas tēmas.
-    </p>
-    <p style="background-color: whitesmoke; text-align: center">Rastrgrafika(GIMP)</p>
-    <p>
-      <img
-        class="responsive-image"
-        src="images/launatura.gif"
-        alt="woohooo"
-      />
-    </p>
-    <p style="background-color: whitesmoke; text-align: center">Vektorgrafika</p>
-    <p>Biju taisījis logo mūsu grupai, bet mūsu grupa izvēlējās izmantot citu logo. Šo iemeslu dēļ man nav saglabājies attēls ar to logo, tāpēc lūk ir bēdīga sejiņa:</p>
-    <h1 style="text-align: center;">:(</h1>
-    <p style="background-color: whitesmoke; text-align: center">EXCEL</p>
-    <p>
-      <img
-        class="responsive-image"
-        src="images/skibidi.png"
-        alt="super"
-      />
-    </p>
-    <p style="background-color: whitesmoke; text-align: center">WORD</p>
-    <p>
-      <img
-        class="responsive-image"
-        src="images/skibidi2.png"
-        alt="superwumens"
-      />
-    </p>
-    <p style="background-color: whitesmoke; text-align: center">
-      3D MODELĒŠANA
-    </p>
-    <p class="">
-      Specifisku apstākļu dēļ, 3D kuba skaldnes attēla man nav, bet biju
-      izmantojis Tinkercad kā palīglīdzekli jauna skapja projektēšanai un iznāca
-      man kaut kas sekojošs:
-    </p>
-    <p>
-      <img
-        class="responsive-image"
-        src="images/3ddatorika.png"
-        alt="supermens"
-      />
-    </p>
-    <p style="background-color: whitesmoke; text-align: center">Video</p>
-    <p class="">
-      Apguvu kā apstrādāt video, man tas process patika, un es, ja būtu
-      pietiekami liels entuziasms, varētu izveidot sev vajadzīgu video arī citām
-      vajadzībām.
-    </p>
-    <p>
-      <video class="responsive-image" controls>
-        <source src="images/3ddarbs.mp4" type="video/mp4" />
-      </video>
-    </p>
+
+  <body style="background-color: rgba(196, 196, 196, 0.452)">
+    <div class="w3-top navbar">
+      <div class="w3-bar w3-black w3-card navbar">
+        <a
+          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a href="#sak" class="w3-bar-item w3-button w3-padding-large">Sākums</a>
+        <a
+          href="#teksts"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Teksta apstrāde</a
+        >
+        <div class="w3-dropdown-hover w3-hide-small navbar">
+          <button class="w3-padding-large w3-button">
+            Attēlu apstrāde <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="#rastr" class="w3-bar-item w3-button">Rastrgrafika</a>
+            <a href="#vektor" class="w3-bar-item w3-button">Vektorgrafika</a>
+          </div>
+        </div>
+        <a
+          href="#izklaj"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Izklājlapas</a
+        >
+        <a
+          href="#model"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >3D modelēšana</a
+        >
+        <a
+          href="#video"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Video</a
+        >
+        <a
+          href="#5"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"
+          >Individuālā tēma</a
+        >
+      </div>
+    </div>
+
+    <div class="content-container">
+      <div style="text-align: center; background-color: lightgrey">
+        <h1 id="sak">Mans datorikas portfolio</h1>
+        <h3>Emīls Dakulis 10.e</h3>
+      </div>
+      <p>
+        Šajā portfolio pastāstīšu un parādīšu, ko mācījos 2024./2025. mācību
+        gadā datorikā pie skolotājas Aijas Lūses. Šī gada pirmā stunda notika
+        sestajā septembrī un kopš tās mēs paspējām apgūt vairākas tēmas.
+      </p>
+      <h2 style="background-color: whitesmoke; text-align: center" id="teksts">
+        Teksta apstrāde
+      </h2>
+      <p>
+        Tekstapstādei esmu iemācījies izmantot WORD. Protu darīt visu, ko vajag
+        manām vajadzībām.
+      </p>
+      <p>
+        <img
+          class="responsive-image"
+          src="images/skibidi2.png"
+          alt="superwumens"
+        />
+      </p>
+      <div style="background-color: rgb(230, 230, 230)">
+        <h1
+          style="
+            text-align: center;
+            padding: 10px;
+            border-radius: 5px;
+            background-color: lightgrey;
+          "
+        >
+          Attēlu izstrāde
+        </h1>
+        <h2 style="background-color: whitesmoke; text-align: center" id="rastr">
+          Rastrgrafika
+        </h2>
+        <p>
+          Rastrgrafikas ziņā esmu mācījies izmantot rastra grafikas redaktoru
+          GIMP, sanāca arī uztaisīt GIF.
+        </p>
+        <p>
+          <img
+            class="responsive-image"
+            src="images/launatura.gif"
+            alt="woohooo"
+          />
+        </p>
+        <h2
+          style="background-color: whitesmoke; text-align: center"
+          id="vektor"
+        >
+          Vektorgrafika
+        </h2>
+        <p>
+          Vektorgrafikai esmu mācījies izmantot Inkscape, ko, manuprāt, apguvu
+          vidēji. Biju taisījis logo mūsu grupai, bet mūsu grupa izvēlējās
+          izmantot citu logo. Šo iemeslu dēļ man nav saglabājies attēls ar to
+          logo, tāpēc lūk ir bēdīga sejiņa:
+        </p>
+        <h1 style="text-align: center">:(</h1>
+      </div>
+      <h2 style="background-color: whitesmoke; text-align: center" id="izklaj">
+        Izklājlapas
+      </h2>
+      <p>
+        Izklājlapu ziņā esmu mācījies izmantot EXCEL, ko, ar specifiskiem
+        palīglīdzekļiem, protu bez problēmām lietot.
+      </p>
+      <p>
+        <img class="responsive-image" src="images/skibidi.png" alt="super" />
+      </p>
+
+      <h2 style="background-color: whitesmoke; text-align: center" id="model">
+        3D modelēšana
+      </h2>
+      <p>
+        Specifisku apstākļu dēļ, 3D kuba skaldnes attēla man nav, bet biju
+        izmantojis Tinkercad kā palīglīdzekli jauna skapja projektēšanai un
+        iznāca man kaut kas sekojošs:
+      </p>
+      <p>
+        <img
+          class="responsive-image"
+          src="images/3ddatorika.png"
+          alt="supermens"
+        />
+      </p>
+      <h2 style="background-color: whitesmoke; text-align: center" id="video">
+        Video
+      </h2>
+      <p>
+        Apguvu kā apstrādāt video, man tas process patika, un es, ja būtu
+        pietiekami liels entuziasms, varētu izveidot sev vajadzīgu video arī
+        citām vajadzībām.
+      </p>
+      <p>
+        <video class="responsive-image" controls>
+          <source src="images/3ddarbs.mp4" type="video/mp4" />
+        </video>
+      </p>
+    </div>
   </body>
 </html>

@@ -10,48 +10,7 @@
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <style>
-      .navbar {
-        padding: 0 !important;
-        border-radius: 0 !important;
-        background-color: black !important;
-        margin-left: 0 !important;
-      }
-      .content-container {
-        max-width: 800px; /* Adjust width as needed */
-        margin: 150px auto; /* Centers content */
-        background-color: white;
-        padding: 20px;
-        border-radius: 5px;
-      }
-
-      .w3-top {
-        width: 100vw !important; /* Full width navbar */
-        left: 0;
-        right: 0;
-        margin: 0 !important;
-      }
-
-      h2,
-      img,
-      div {
-        padding: 10px;
-        border-radius: 5px;
-        background-color: white;
-      }
-      p {
-        padding: 10px;
-        border-radius: 5px;
-        background-color: white;
-        text-indent: 30px;
-      }
-
-      .responsive-image {
-        width: 100%;
-        height: auto;
-        display: block;
-      }
-    </style>
+    <link rel="stylesheet" href="CSS/mansStils.css" />
     <title>Mans datorikas portfolio</title>
     <meta
       charset="UTF-8"
@@ -60,23 +19,29 @@
     />
     <script>
       document.addEventListener("DOMContentLoaded", function () {
-        var offset = 60;
+        var standardOffset = 60;
+        var externalOffset = 60;
 
-        var links = document.querySelectorAll('a[href^="#"]');
+        function smoothScroll(targetId, customOffset) {
+          var targetElement = document.querySelector(targetId);
+          if (targetElement) {
+            var scrollPosition = targetElement.offsetTop - customOffset;
+            window.scrollTo({ top: scrollPosition, behavior: "smooth" });
+          }
+        }
 
-        links.forEach(function (link) {
+        document.querySelectorAll('a[href^="#"]').forEach(function (link) {
           link.addEventListener("click", function (e) {
             e.preventDefault();
-
-            var targetId = this.getAttribute("href");
-            var targetElement = document.querySelector(targetId);
-
-            window.scrollTo({
-              top: targetElement.offsetTop - offset,
-              behavior: "smooth",
-            });
+            smoothScroll(this.getAttribute("href"), standardOffset);
           });
         });
+
+        if (window.location.hash) {
+          setTimeout(() => {
+            smoothScroll(window.location.hash, externalOffset);
+          }, 100);
+        }
       });
     </script>
   </head>
@@ -122,7 +87,7 @@
           >Video</a
         >
         <a
-          href="#5"
+          href="../otrais.html"
           class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"
           >Individuālā tēma</a
         >

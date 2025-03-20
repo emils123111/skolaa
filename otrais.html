@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Lato"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="CSS/mansStils.css" />
+    <title>Ļaunatūra</title>
+    <meta
+      charset="UTF-8"
+      name="viewport"
+      content="width=device-width, initial-scale=1.0"
+    />
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        var offset = 60;
+
+        var links = document.querySelectorAll('a[href^="#"]');
+
+        links.forEach(function (link) {
+          link.addEventListener("click", function (e) {
+            e.preventDefault();
+
+            var targetId = this.getAttribute("href");
+            var targetElement = document.querySelector(targetId);
+
+            if (targetElement) {
+              var scrollPosition = targetElement.offsetTop - offset;
+
+              window.scrollTo({
+                top: scrollPosition,
+                behavior: "smooth",
+              });
+            }
+          });
+        });
+      });
+    </script>
+  </head>
+
+  <body style="background-color: rgba(196, 196, 196, 0.452)">
+    <div class="w3-top navbar">
+      <div class="w3-bar w3-black w3-card navbar">
+        <a
+          class="w3-bar-item w3-button w3-padding-large w3-hide-medium w3-hide-large w3-right"
+          href="javascript:void(0)"
+          onclick="myFunction()"
+          title="Toggle Navigation Menu"
+          ><i class="fa fa-bars"></i
+        ></a>
+        <a
+          href="../index.html#sak"
+          class="w3-bar-item w3-button w3-padding-large"
+          >Sākums</a
+        >
+        <a
+          href="../index.html#teksts"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Teksta apstrāde</a
+        >
+        <div class="w3-dropdown-hover w3-hide-small navbar">
+          <button class="w3-padding-large w3-button">
+            Attēlu apstrāde <i class="fa fa-caret-down"></i>
+          </button>
+          <div class="w3-dropdown-content w3-bar-block w3-card-4">
+            <a href="../index.html#rastr" class="w3-bar-item w3-button"
+              >Rastrgrafika</a
+            >
+            <a href="../index.html#vektor" class="w3-bar-item w3-button"
+              >Vektorgrafika</a
+            >
+          </div>
+        </div>
+        <a
+          href="../index.html#izklaj"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Izklājlapas</a
+        >
+        <a
+          href="../index.html#model"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >3D modelēšana</a
+        >
+        <a
+          href="../index.html#video"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small"
+          >Video</a
+        >
+        <a
+          href="../index.html"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"
+          >Datorikas portfolio</a
+        >
+        <a
+          href="#launa"
+          class="w3-bar-item w3-button w3-padding-large w3-hide-small w3-right"
+          >Individuālā tēma</a
+        >
+      </div>
+    </div>
+
+    <div class="content-container" id="launa">
+      <div style="text-align: center; background-color: lightgrey">
+        <h1 id="sak">Ļaunatūra</h1>
+        <h3>Emīls Dakulis 10.e</h3>
+      </div>
+      <p>
+        Ļaunprogrammatūra, saīsināti malware, ir jebkāda veida programmatūra,
+        kas izstrādāta ar mērķi kaitēt, traucēt vai iegūt nesankcionētu piekļuvi
+        datoram, serverim vai tīklam. Tā var tikt izmantota, lai nozagtu
+        sensitīvus datus, bloķētu piekļuvi informācijai vai neapzināti
+        apdraudētu lietotāja privātumu un drošību. Ļaunprogrammatūra pastāv
+        dažādās formās, tostarp vīrusi, tārpi, Trojas zirgi, izspiedējvīrusi,
+        spiegprogrammatūras, reklāmprogrammatūras, krāpnieciskas programmas,
+        taustiņsitienu reģistrētāji un citas.
+      </p>
+      <p>
+        Ļaunprogrammatūra ir nopietns drauds gan privātpersonām, gan uzņēmumiem
+        internetā. Pētījumi liecina, ka tās izplatība strauji pieaug – 2017.
+        gadā tika atklāti gandrīz 670 miljoni jaunu ļaunprogrammatūru variantu,
+        kas ir divreiz vairāk nekā iepriekšējā gadā. Kibernoziegumi, tostarp
+        ļaunprogrammatūras uzbrukumi un citi digitālie noziegumi, līdz 2021.
+        gadam pasaules ekonomikai bija radījuši aptuveni 6 triljonu ASV dolāru
+        lielus zaudējumus, un šī summa ik gadu pieaug par 15%. Pēdējos gados
+        dažas ļaunprogrammatūras tiek īpaši veidotas, lai uzbruktu kritiskām
+        sistēmām, piemēram, elektroenerģijas sadales tīkliem.
+      </p>
+      <p>
+        Aizsardzība pret ļaunprogrammatūru atšķiras atkarībā no tās veida, taču
+        daudzi uzbrukumi ir novēršami, izmantojot pretvīrusu programmatūru,
+        ugunsmūrus, regulārus atjauninājumus, tīklu aizsardzību un datu rezerves
+        kopijas. Tomēr dažas ļaunprogrammatūras tiek radītas tā, lai apietu
+        pretvīrusu programmu noteikšanas mehānismus, padarot kiberdrošību par
+        nepārtrauktu izaicinājumu.
+      </p>
+
+      <p>
+        <img
+          class="responsive-image"
+          src="images/launatura.gif"
+          alt="woohooo"
+        />
+      </p>
+      <footer style="text-align: center">
+        <p>
+          Atsauce:
+          <a href="https://en.wikipedia.org/wiki/Malware" target="_blank"
+            >https://en.wikipedia.org/wiki/Malware</a
+          >
+        </p>
+      </footer>
+    </div>
+  </body>
+</html>
